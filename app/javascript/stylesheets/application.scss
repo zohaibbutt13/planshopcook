@@ -1,1 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
+
+// shared files
+@import "shared/navbar";
+@import "shared/common";
+
+// page specific
+@import "home";
+
+h1, h2, h3, h4, h5, h6, p, a, button, span {
+  font-family: $primary-font-family;
+}

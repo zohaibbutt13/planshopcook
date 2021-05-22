@@ -1,0 +1,41 @@
+$primary-color: #D63230;
+$secondary-color: #FFFFFF;
+
+$primary-text-color: #000000;
+$secondary-text-color: #FFFFFF;
+
+$white-color: #FFFFFF;
+
+// item colors
+$item1: #E4B2D6;
+$item2: #DCC698;
+$item3: #A2D1E1;
+$item4: #DCD691;
+
+// navbar
+$navbar-background-color: $primary-color;
+$navbar-text-color: $secondary-text-color;
+
+// buttons
+$primary-button-background-color: $primary-color;
+$primary-button-text-color: $secondary-color;
+$primary-button-border-color: $primary-color;
+$primary-button-hover-background-color: transparent;
+$primary-button-hover-text-color: $primary-color;
+$primary-button-hover-border-color: $primary-color;
+
+$secondary-button-background-color: $secondary-color;
+$secondary-button-text-color: $primary-color;
+$secondary-button-border-color: $secondary-color;
+$secondary-button-hover-background-color: $primary-color;
+$secondary-button-hover-text-color: $secondary-color;
+$secondary-button-hover-border-color: $primary-color;
+
+
+// border radius start
+$primary-radius: 4px;
+// border radius end
+
+// font family start
+$primary-font-family: "Poppins",Arial,sans-serif;
+// font family end

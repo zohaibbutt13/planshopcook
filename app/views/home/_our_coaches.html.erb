@@ -1,0 +1,88 @@
+<div class="secondary-app-container our-coaches-container">
+  <div class="container">
+    <h2 class="text-center mb-4">Our Coaches</h2>
+    <p class="text-center mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, alias. Iure, doloribus?</p>
+  </div>
+  <div class="container">
+    <div class="row no-gutters coach-items">
+      <div class="col-lg-3 coach-item">
+        <div class="coach-circular-icon-container item1 mx-auto">
+          <div class="coach-circular-icon-border d-flex justify-content-center align-items-center">
+            <i class="fas fa-truck"></i>
+          </div>
+        </div>
+        <div class="coach-body">
+          <h3 class="heading text-center mb-3">LOREM IPSUM</h3>
+          <p class="text-center">LOREM IPSUM DOLOR SIT AMET.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 coach-item">
+        <div class="coach-circular-icon-container item2 mx-auto">
+          <div class="coach-circular-icon-border d-flex justify-content-center align-items-center">
+            <i class="fas fa-hamburger"></i>
+          </div>
+        </div>
+        <div class="coach-body">
+          <h3 class="heading text-center mb-3">LOREM IPSUM</h3>
+          <p class="text-center">LOREM IPSUM DOLOR SIT AMET.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 coach-item">
+        <div class="coach-circular-icon-container item3 mx-auto">
+          <div class="coach-circular-icon-border d-flex justify-content-center align-items-center">
+            <i class="fas fa-medal"></i>
+          </div>
+        </div>
+        <div class="coach-body">
+          <h3 class="heading text-center mb-3">LOREM IPSUM</h3>
+          <p class="text-center">LOREM IPSUM DOLOR SIT AMET.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 coach-item">
+        <div class="coach-circular-icon-container item4 mx-auto">
+          <div class="coach-circular-icon-border d-flex justify-content-center align-items-center">
+            <i class="fas fa-atom"></i>
+          </div>
+        </div>
+        <div class="coach-body">
+          <h3 class="heading text-center mb-3">LOREM IPSUM</h3>
+          <p class="text-center">LOREM IPSUM DOLOR SIT AMET.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="category-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/vegetarian.jpg'), category_text: 'Vegiterian' } %>
+        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/pescatarian.jpg'), category_text: 'Pescatarian' } %>
+        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/mediterranean.jpg'), category_text: 'Mediterranean' } %>
+      </div>
+      <div class="col-lg-4">
+        <div class="categories-outer-container">
+          <div class="categories-inner-container d-flex align-items-center">
+            <div class="categories-element text-center">
+              <h2>Categories</h2>
+              <p>Protect the health of every home</p>
+              <%= link_to 'Recipes', '#_', class: 'secondary-btn' %>
+              <h5 class="text-center">OR</h5>
+              <%= link_to 'Generate Meal Plan', '#_', class: 'secondary-btn' %>
+            </div>
+          </div>
+        </div>
+        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/kids.jpg'), category_text: 'Kids' } %>
+      </div>
+      <div class="col-lg-4">
+        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/vegan.jpg'), category_text: 'Vegan' } %>
+        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/keto.jpg'), category_text: 'Keto' } %>
+        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/healthy.jpg'), category_text: 'Healthy' } %>
+      </div>
+    </div>
+  </div>
+</div>

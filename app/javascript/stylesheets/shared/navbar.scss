@@ -1,0 +1,25 @@
+@import "variable";
+
+.navbar {
+  background-color: $navbar-background-color;
+  padding: 15px 150px;
+
+  button, a {
+    color: $navbar-text-color !important;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      a {
+        font-size: 13px;
+        letter-spacing: 2px;
+        padding-right: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+}

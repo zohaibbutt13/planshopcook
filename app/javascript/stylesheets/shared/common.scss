@@ -1,0 +1,40 @@
+@import "variable";
+
+.secondary-app-container {
+  padding: 96px 0;
+  background-color: $secondary-color;
+  width: 100%;
+}
+
+.primary-btn {
+  background-color: $primary-button-background-color;
+  color: $primary-button-text-color;
+  border-radius: $primary-radius;
+  border: 1px solid $primary-button-border-color;
+  text-decoration: none !important;
+  cursor: pointer;
+  padding: 16px 48px;
+
+  &:hover {
+    background-color: $primary-button-hover-background-color;
+    color: $primary-button-hover-text-color;
+    border: 1px solid $primary-button-hover-border-color;
+  }
+}
+
+.secondary-btn {
+  background-color: $secondary-button-background-color;
+  color: $secondary-button-text-color;
+  border-radius: $primary-radius;
+  border: 1px solid $secondary-button-border-color;
+  text-decoration: none !important;
+  cursor: pointer;
+  padding: 8px 12px;
+  line-height: 36px;
+
+  &:hover {
+    background-color: $secondary-button-hover-background-color;
+    color: $secondary-button-hover-text-color;
+    border: 1px solid $secondary-button-hover-border-color;
+  }
+}

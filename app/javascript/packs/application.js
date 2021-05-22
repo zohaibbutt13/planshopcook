@@ -8,8 +8,9 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-import "bootstrap"
-import "../stylesheets/application"
+import "bootstrap";
+import "@fortawesome/fontawesome-free/css/all.css";
+import "../stylesheets/application";
 
 $(document).on("turbolinks:load", function(){
   $("[data-toggle='tooltip']").tooltip();
