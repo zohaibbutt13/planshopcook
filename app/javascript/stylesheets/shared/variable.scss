@@ -1,10 +1,21 @@
 $primary-color: #D63230;
+$primary-hover-color: #D63230;
 $secondary-color: #FFFFFF;
+$primary-border-color:              #E0E7EE;
+$secondary-border-color:            #CCCCCC;
+$primary-background-disabled-color: #F7F7F7;
+$primary-border-disabled-color:     #F7F7F7;
+$secondary-border-disabled-color:   #DDDDDD;
+
+$link-color: #006FC8;
+$link-hover-color: #00559A;
 
 $primary-text-color: #000000;
 $secondary-text-color: #FFFFFF;
 
 $white-color: #FFFFFF;
+$black-color: #000000;
+$grey-color: grey;
 
 // item colors
 $item1: #E4B2D6;
@@ -30,6 +41,24 @@ $secondary-button-border-color: $secondary-color;
 $secondary-button-hover-background-color: $primary-color;
 $secondary-button-hover-text-color: $secondary-color;
 $secondary-button-hover-border-color: $primary-color;
+
+// start checkbox colors
+$checkbox-unchecked-background-default-color:  $secondary-color;
+$checkbox-unchecked-border-default-color:      $secondary-border-color;
+$checkbox-unchecked-background-hover-color:    $secondary-color;
+$checkbox-unchecked-border-hover-color:        $primary-hover-color;
+$checkbox-unchecked-background-disabled-color: $primary-background-disabled-color;
+$checkbox-unchecked-border-disabled-color:     $secondary-border-disabled-color;
+$checkbox-checked-background-default-color:    $primary-color;
+$checkbox-checked-border-default-color:        $primary-color;
+$checkbox-checked-text-default-color:          $secondary-color;
+$checkbox-checked-background-hover-color:      $primary-hover-color;
+$checkbox-checked-border-hover-color:          $primary-hover-color;
+$checkbox-checked-text-hover-color:            $secondary-color;
+$checkbox-checked-background-disabled-color:   $primary-border-disabled-color;
+$checkbox-checked-border-disabled-color:       $primary-border-disabled-color;
+$checkbox-checked-text-disabled-color:         $secondary-color;
+// end checkbox colors
 
 
 // border radius start

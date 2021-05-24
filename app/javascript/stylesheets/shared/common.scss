@@ -38,3 +38,244 @@
     border: 1px solid $secondary-button-hover-border-color;
   }
 }
+
+.app-primary-link {
+  text-decoration: none;
+  color: $link_color;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $link-hover-color;
+  }
+}
+
+// app custom checkbox start
+.checkbox-container {
+  display: block;
+  position: relative;
+  margin-bottom: 12px !important;
+  padding: 0 !important;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex !important;
+  justify-content: flex-start !important;
+
+  input[type="checkbox"] { width: 18px !important; height: 0; }
+  /* Hide the browser's default checkbox */
+  input {
+    padding-left: 30px;
+    opacity: 0;
+    cursor: pointer;
+    height: 0 !important;
+    width: 0;
+  }
+  label {
+    padding: 0 !important;
+    padding-left: 12px !important;
+    display: block;
+    line-height: 18px;
+    cursor: pointer;
+  }
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border: 1px solid $checkbox-unchecked-border-default-color;
+    border-radius: 3px;
+    background-color: $checkbox-unchecked-background-default-color;
+  }
+}
+
+
+
+/* On mouse-over, add a $primary-color border */
+.checkbox-container:hover input ~ .checkmark {
+  border: 1px solid $checkbox-unchecked-border-hover-color;
+  background-color: $checkbox-unchecked-background-hover-color;
+  border-radius: 3px;
+}
+
+/* When the checkbox is checked, add a $primary-color background */
+.checkbox-container input[type="checkbox"]:disabled ~ .checkmark {
+  background-color: $checkbox-unchecked-background-disabled-color;
+  border: 1px solid $checkbox-unchecked-border-disabled-color;
+}
+
+.checkbox-container input[type="checkbox"]:disabled:hover ~ .checkmark {
+  cursor: not-allowed;
+}
+
+/* When the checkbox is checked, add a $primary-color background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: $checkbox-checked-background-default-color;
+  border: 1px solid $checkbox-checked-border-default-color;
+}
+
+.checkbox-container input:checked:hover ~ .checkmark {
+  background-color: $checkbox-checked-background-hover-color;
+  border: 1px solid $checkbox-checked-border-hover-color;
+}
+
+.checkbox-container input:checked:disabled ~ .checkmark {
+  background-color: $checkbox-checked-background-disabled-color;
+  border: 1px solid $checkbox-checked-border-disabled-color;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  transform: scale(1) rotate(45deg);
+  transition: transform 200ms;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 4px;
+  top: -1px;
+  width: 6px;
+  height: 12px;
+  border: solid $checkbox-checked-text-default-color;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: scale(0) rotate(45deg);
+  -ms-transform: scale(0) rotate(45deg);
+  transform: scale(0) rotate(45deg);
+  transition: transform 200ms;
+  transform-origin: 47% 54%;
+}
+// app custom checkbox end
+
+// start label and input
+.label-input-container-sm {
+  padding: 14px 0;
+
+  .label-input-item {
+    padding: 7px 0;
+
+    label {
+      line-height: 16px;
+      padding: 6px 0;
+      margin: 0;
+      word-break: break-all;
+      cursor: pointer;
+    }
+
+    input, textarea {
+      // total height - padding + border - text size defined
+      padding: 7px (3.6rem - 1.4rem + 0.2rem - 1rem);
+      line-height: 20px;
+      width: 100%;
+      border: 1px solid $grey-color;
+      border-radius: 4px;
+
+      &:focus {
+        border: 1px solid $black-color;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .add-resource-element {
+      a {
+        line-height: 36px;
+
+        img {
+          width: 25px;
+          height: 25px;
+          line-height: 36px;
+        }
+      }
+    }
+  }
+
+  .label-input-item:first-child {
+    padding-top: 0;
+  }
+
+  .label-input-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .form-submit {
+    background-color: $primary-button-background-color;
+    color: $primary-button-text-color;
+    border-radius: $primary-radius;
+    border: 1px solid $primary-button-border-color;
+    text-decoration: none !important;
+    cursor: pointer;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 100%;
+
+    &:hover, &:focus {
+      outline: none;
+      box-shadow: none;
+      background-color: $primary-button-hover-background-color;
+      color: $primary-button-hover-text-color;
+      border: 1px solid $primary-button-hover-border-color;
+    }
+  }
+}
+
+.label-input-container {
+  .label-input-item {
+    padding-top: 10px;
+
+    label {
+      line-height: 22px;
+      padding: 9px 0;
+      margin: 0;
+    }
+
+    input, textarea {
+      padding: 9px;
+      line-height: 22px;
+      border: 1px solid $grey-color;
+      border-radius: 4px;
+
+      &:focus {
+        border: 1px solid $black-color;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .add-resource-element {
+      a {
+        line-height: 42px;
+
+        img {
+          width: 25px;
+          height: 25px;
+          line-height: 42px;
+        }
+      }
+    }
+  }
+
+  .label-input-item:first-child {
+    padding-top: 0;
+  }
+
+  .label-input-item:last-child {
+    padding-bottom: 0;
+  }
+}
+// end label and input
+
+// custom classes start
+.border-none {
+  border: none !important;
+}
+// custom classes end

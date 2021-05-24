@@ -176,3 +176,28 @@
     }
   }
 }
+
+.new-this-week-container {
+  .new-item-box-container {
+    .new-item-box-item {
+      position: relative;
+
+      .new-item-img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .indicator {
+        background-color: $primary-color;
+        color: $secondary-color;
+        padding: 2px 10px;
+      }
+
+      .bottom-left-corner-indicator-md {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
