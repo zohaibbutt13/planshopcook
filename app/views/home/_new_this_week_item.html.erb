@@ -1,6 +1,29 @@
 <div class="new-item-box-container">
   <div class="new-item-box-item">
-    <%= image_tag new_item_image_url, class: 'new-item-img' %>
-    <span class="top-left-corner-indicator-md indicator"><%= new_item_text %></span>
+    <div class="new-item-img-container">
+      <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+        <%= image_tag new_item_image_url, class: 'new-item-img' %>
+      </div>
+      <span class="top-left-corner-indicator-md indicator"><%= new_item_text %></span>
+    </div>
+    <div class="item-details">
+      <div class="user-name-container text-center">
+        <%= link_to 'abc', '#_', class: 'app-secondary-link' %>
+      </div>
+      <div class="item-name-container text-center">
+        <%= link_to 'xyz', '#_', class: 'app-secondary-link' %>
+      </div>
+      <p class="item-type text-center">Vegan</p>
+    </div>
+  </div>
+  <div class="bottom-actions-container">
+    <div class="d-flex justify-content-center">
+      <%= link_to '#_', class: 'primary-btn icon-container' do %>
+        <i class="fas fa-bars bars-icon"></i>
+      <% end %>
+      <%= link_to '#_', class: 'primary-btn icon-container ml-5' do %>
+        <i class="fas fa-heart heart-icon"></i>
+      <% end %>
+    </div>
   </div>
 </div>

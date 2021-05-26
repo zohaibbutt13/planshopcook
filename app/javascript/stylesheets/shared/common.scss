@@ -41,11 +41,21 @@
 
 .app-primary-link {
   text-decoration: none;
-  color: $link_color;
+  color: $primary-link-text-color;
 
   &:hover, &:focus {
     text-decoration: none;
-    color: $link-hover-color;
+    color: $primary-link-hover-color;
+  }
+}
+
+.app-secondary-link {
+  text-decoration: none;
+  color: $secondary-link-text-color;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    color:$secondary-link-hover-color;
   }
 }
 
@@ -273,6 +283,25 @@
   }
 }
 // end label and input
+
+// dropdown start
+.primary-dropdown {
+  .dropdown-toggle {
+
+  }
+
+  .dropdown-menu {
+    .dropdown-item {
+      color: $primary-color !important;
+
+      &:hover, &:focus {
+        color: $secondary-color !important;
+        background-color: $primary-color !important;
+      }
+    }
+  }
+}
+// dropdown end
 
 // custom classes start
 .border-none {

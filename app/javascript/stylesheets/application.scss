@@ -1,8 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
 
 // shared files
-@import "shared/navbar";
 @import "shared/common";
+@import "shared/navbar";
+@import "shared/footer";
 
 // page specific
 @import "home";

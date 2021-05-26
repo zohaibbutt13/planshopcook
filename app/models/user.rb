@@ -10,4 +10,10 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true
   validates :full_name, presence: true
+
+  # attribute methods start
+  def user_full_name
+    full_name
+  end
+  # attribute methods end
 end
