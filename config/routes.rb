@@ -5,4 +5,10 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
   root 'home#index'
+
+  resources :home, only: [:index] do
+    collection do
+      get :recipies
+    end
+  end
 end

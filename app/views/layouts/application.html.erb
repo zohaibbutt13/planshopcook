@@ -12,6 +12,9 @@
 
   <body>
     <%= render partial: '/shared/navbar' %>
+    <div class="container breadcrumbs-container">
+      <%= breadcrumbs.render(format: :inline, separator: " / ") %>
+    </div>
     <%= yield %>
     <%= render partial: '/shared/footer' %>
   </body>

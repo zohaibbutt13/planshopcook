@@ -303,8 +303,46 @@
 }
 // dropdown end
 
+// list start
+.inline-primary-list {
+  li {
+    list-style-type: none;
+    display: inline-block;
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+      font-size: 1rem;
+      padding: 5px 20px;
+      background-color: transparent;
+      border-radius: 4px;
+
+      &:hover, &:focus {
+        text-decoration: none;
+        color:$secondary-link-hover-color;
+      }
+    }
+
+    a.selected {
+      background-color: $primary-color;
+      color: $secondary-color;
+    }
+  }
+}
+// list end
+
+// breadcrumb start
+.breadcrumbs-container {
+  padding: 20px 0;
+}
+// breadcrumb end
+
 // custom classes start
 .border-none {
   border: none !important;
+}
+
+.list-style-type-none {
+  list-style-type: none !important;
 }
 // custom classes end

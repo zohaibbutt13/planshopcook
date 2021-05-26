@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="d-flex justify-content-center py-3">
+    <%= link_to 'Generate Meal Plan', '#_', class: 'primary-btn' %>
+  </div>
+</div>
+
+<div class="filters-container py-3">
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <ul class="inline-primary-list">
+        <li><%= link_to 'All', '#_', class: 'selected' %></li>
+        <li><%= link_to 'Vegetarian', '#_' %></li>
+        <li><%= link_to 'Vegan', '#_' %></li>
+        <li><%= link_to 'Pescatarian', '#_' %></li>
+        <li><%= link_to 'Keto', '#_' %></li>
+        <li><%= link_to 'Mediterranean', '#_' %></li>
+        <li><%= link_to 'Kids', '#_' %></li>
+        <li><%= link_to 'Healthy', '#_' %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="filters-container pb-5">
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <ul class="inline-primary-list">
+        <li><%= link_to 'All', '#_', class: 'selected' %></li>
+        <li><%= link_to 'Breakfast', '#_' %></li>
+        <li><%= link_to 'Lunch', '#_' %></li>
+        <li><%= link_to 'Dinner', '#_' %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="new-this-week-container">
+  <div class="container">
+    <div class="row">
+      <% 10.times do %>
+        <div class="col-lg-3">
+          <%= render partial: '/home/new_this_week_item', locals: { new_item_image_url: image_url('home/healthy.jpg'), new_item_text: 'Lunch' } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
