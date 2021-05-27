@@ -1,6 +1,14 @@
 <div class="container">
   <div class="d-flex justify-content-center py-3">
-    <%= link_to 'Generate Meal Plan', '#_', class: 'primary-btn' %>
+    <div class="dropdown primary-dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="generate_meal_plan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Generate Meal Plan
+      </button>
+      <div class="dropdown-menu" aria-labelledby="generate_meal_plan">
+        <a class="dropdown-item" href="#">Generate 1 Week Meal Plan</a>
+        <a class="dropdown-item" href="#">Generate 2 Week Meal Plan</a>
+      </div>
+    </div>
   </div>
 </div>
 

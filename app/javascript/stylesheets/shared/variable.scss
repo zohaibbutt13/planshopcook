@@ -66,6 +66,23 @@ $checkbox-checked-border-disabled-color:       $primary-border-disabled-color;
 $checkbox-checked-text-disabled-color:         $secondary-color;
 // end checkbox colors
 
+// start dropdown colors
+$dropdown-background-color:          $secondary-color;
+$dropdown-border-default-color:      $secondary-border-color;
+$dropdown-text-default-color:        $black-color;
+$dropdown-border-hover-color:        $black-color;
+$dropdown-text-hover-color:          $black-color;
+$dropdown-border-focus-color:        $primary-color;
+$dropdown-text-focus-color:          $black-color;
+$dropdown-background-disabled-color: $primary-background-disabled-color;
+$dropdown-border-disabled-color:     $secondary-border-disabled-color;
+$dropdown-text-disabled-color:       $black-color;
+
+$dropdown-item-background-default-color:  $secondary-color;
+$dropdown-item-background-hover-color:    #F2F8FC;
+$dropdown-item-background-disabled-color: $primary-background-disabled-color;
+$dropdown-item-background-active-color:   #E6F1F9;
+// TODO border color of dropdown and dropdown item (left)
 
 // border radius start
 $primary-radius: 4px;
