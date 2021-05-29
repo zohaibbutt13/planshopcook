@@ -1,0 +1,54 @@
+.meal-plans-container {
+  padding: 15px;
+
+  .meal-plans-box {
+    border: 1px solid $primary-border-color;
+    border-radius: 4px;
+
+    .meal-type-container {
+      border-right: 1px solid $primary-border-color;
+      width: 60px;
+      padding-top: 60px;
+
+      .meal-type-item {
+        -ms-writing-mode: tb-rl;
+        writing-mode: tb-rl;
+        height: 260px;
+        font-size: 1.3rem;
+      }
+    }
+
+    .generated-meals-container {
+      width: 100%;
+      overflow-x: scroll;
+
+      .generated-meals-box {
+        width: 2345px;
+      }
+
+      .meal-days {
+        .meal-day {
+          text-align: center;
+          padding: 20px;
+          font-size: 1.3rem;
+          margin: 0;
+        }
+      }
+      .meals {
+        .meal-item {
+          padding: 20px;
+          width: 335px;
+
+          .meal-item-box-item {
+            .meal-item-img-container {
+              .meal-item-img {
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

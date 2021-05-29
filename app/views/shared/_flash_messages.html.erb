@@ -1,0 +1,29 @@
+<% if flash.present? %>
+  <div class="flash-messages-wrapper">
+    <% flash.each do |key, value| %>
+      <% flash_messages = value.is_a?(String) ? [value] : value %>
+      <div class="flash-type flash-<%= key %> show" id="flash-<%= key %>">
+        <div class="flash-icon <%= key %>-icon">
+          <i class="<%= get_flash_icons(key) %>" aria-hidden="true"></i>
+        </div>
+        <div class="row no-gutters">
+          <div class="verticle-seperator <%= key %>-seperator"></div>
+          <div class="col">
+            <div class="col-12 row no-gutters justify-content-end dismiss-icon pt-2">
+              <a href="#_" data-toggle="collapse" data-target="#flash-<%= key %>"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="row no-gutters">
+              <div class="col">
+                <ul class="<%= 'list-unstyled' if flash_messages.length == 1 %>">
+                  <% flash_messages.each do |message| %>
+                    <li><%= message.html_safe %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

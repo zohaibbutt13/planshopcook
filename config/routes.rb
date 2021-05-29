@@ -11,4 +11,7 @@ Rails.application.routes.draw do
       get :recipies
     end
   end
+
+  resources :meal_plans, only: [:new, :create]
+  resources :recipes, only: [:new, :create]
 end

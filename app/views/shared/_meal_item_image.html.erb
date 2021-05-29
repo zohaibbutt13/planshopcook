@@ -1,0 +1,17 @@
+<div class="meal-item-img-container">
+  <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+    <%= image_tag meal_item_image_url, class: 'meal-item-img' %>
+  </div>
+  <% if local_assigns[:top_left_corner_text] %>
+    <span class="top-left-corner-indicator <%= floating_size == 'md' ? 'indicator-md' : 'indicator' %>"><%= top_left_corner_text %></span>
+  <% end %>
+  <% if local_assigns[:top_right_corner_text] %>
+    <span class="top-right-corner-indicator <%= floating_size == 'md' ? 'indicator-md' : 'indicator' %>"><%= top_right_corner_text.html_safe %></span>
+  <% end %>
+  <% if local_assigns[:bottom_left_corner_text] %>
+    <span class="bottom-left-corner-indicator <%= floating_size == 'md' ? 'indicator-md' : 'indicator' %>"><%= bottom_left_corner_text %></span>
+  <% end %>
+  <% if local_assigns[:bottom_right_corner_text] %>
+    <span class="bottom-right-corner-indicator <%= floating_size == 'md' ? 'indicator-md' : 'indicator' %>"><%= bottom_right_corner_text %></span>
+  <% end %>
+</div>

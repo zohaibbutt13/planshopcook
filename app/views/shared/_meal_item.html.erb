@@ -1,11 +1,6 @@
-<div class="new-item-box-container">
-  <div class="new-item-box-item">
-    <div class="new-item-img-container">
-      <div class="w-100 h-100 d-flex justify-content-center align-items-center">
-        <%= image_tag new_item_image_url, class: 'new-item-img' %>
-      </div>
-      <span class="top-left-corner-indicator-md indicator"><%= new_item_text %></span>
-    </div>
+<div class="meal-item-box-container">
+  <div class="meal-item-box-item">
+    <%= render partial: '/shared/meal_item_image', locals: { meal_item_image_url: meal_item_image_url } %>
     <div class="item-details">
       <div class="user-name-container text-center">
         <%= link_to 'abc', '#_', class: 'app-secondary-link' %>

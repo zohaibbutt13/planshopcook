@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "bootstrap";
+import "select2";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "../stylesheets/application";
 
@@ -23,3 +24,6 @@ $(document).on("turbolinks:load", function(){
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+require("trix")
+require("@rails/actiontext")

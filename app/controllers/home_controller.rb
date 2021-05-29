@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   end
 
   def recipies
-    breadcrumbs.add "Recipies", recipies_home_index_path, class: 'app-secondary-link'
+    add_breadcrumbs "Recipies", recipies_home_index_path
 
     respond_to do |format|
       format.html

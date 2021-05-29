@@ -1,0 +1,37 @@
+<div class="meal-plans-container">
+  <div class="meal-plans-box">
+    <div class="row no-gutters">
+      <div class="meal-type-container">
+        <p class="meal-type-item text-center mx-auto">BreakFast</p>
+        <p class="meal-type-item text-center mx-auto">Lunch</p>
+        <p class="meal-type-item text-center mx-auto">Dinner</p>
+      </div>
+      <div class="col-11 mx-3">
+        <div class="generated-meals-container">
+          <div class="generated-meals-box">
+            <div class="meal-days row no-gutters">
+              <p class="meal-day col">Sunday</p>
+              <p class="meal-day col">Monday</p>
+              <p class="meal-day col">Tuesday</p>
+              <p class="meal-day col">Wednesday</p>
+              <p class="meal-day col">Thursday</p>
+              <p class="meal-day col">Friday</p>
+              <p class="meal-day col">Saturday</p>
+            </div>
+            <div class="breakfast-meals meals">
+              <div class="row no-gutters">
+                <% 10.times do %>
+                  <div class="meal-item">
+                    <div class="meal-item-box-item">
+                      <%= render partial: '/shared/meal_item_image', locals: { meal_item_image_url: image_url('home/healthy.jpg'), top_right_corner_text: " <span class='js-edit-meal-item'>+</span> ", bottom_left_corner_text: '30 min', floating_size: 'md' } %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

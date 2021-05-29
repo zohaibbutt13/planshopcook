@@ -7,7 +7,7 @@
     <div class="row">
       <% 10.times do %>
         <div class="col-lg-3">
-          <%= render partial: '/home/new_this_week_item', locals: { new_item_image_url: image_url('home/healthy.jpg'), new_item_text: 'Lunch' } %>
+          <%= render partial: '/shared/meal_item', locals: { meal_item_image_url: image_url('home/healthy.jpg'), top_left_corner_text: 'Lunch', floating_size: 'md' } %>
         </div>
       <% end %>
     </div>

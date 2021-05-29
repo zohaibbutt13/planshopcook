@@ -1,0 +1,108 @@
+<%= form_for(@recipe, url: recipes_path(@recipe), html: { method: :post }) do |f| %>
+  <div class="row no-gutters pt-5">
+    <div class="offset-3 col-6">
+      <h2>Submit Recipe</h2>
+      <div class="label-input-container-sm">
+        <div class="label-input-item">
+          <div class="row no-gutters">
+            <%= f.label :recipe_name, class: 'col-4' %>
+            <%= f.text_field :recipe_name, autofocus: true, class: 'col-8' %>
+          </div>
+        </div>
+
+        <div class="label-input-item">
+          <div class="row no-gutters">
+            <%= f.label :username, class: 'col-4' %>
+            <%= f.text_field :username, class: 'col-8' %>
+          </div>
+        </div>
+
+        <div class="label-input-item">
+          <div class="row no-gutters">
+            <%= f.label :category, class: 'col-4' %>
+            <%= f.select :category, options_for_select(recipe_categories), {}, class: 'col-8 js-select2-dropdown' %>
+          </div>
+        </div>
+
+        <div class="label-input-item">
+          <div class="row no-gutters">
+            <%= f.label :meal_type, class: 'col-4' %>
+            <%= f.select :meal_type, options_for_select(recipe_meal_types), {}, class: 'col-8 js-select2-dropdown' %>
+          </div>
+        </div>
+
+        <div class="label-input-item">
+          <div class="row no-gutters js-select2-dropdown-container">
+            <%= f.label :cook_time, class: 'col-4' %>
+            <%= f.time_select :cook_time, { time_separator: '' }, class: 'col-4' %>
+          </div>
+        </div>
+
+        <div class="label-input-item">
+          <div class="row no-gutters">
+            <%= f.label :number_of_ingredients, class: 'col-4' %>
+            <%= f.number_field :number_of_ingredients, min: 1, class: 'col-8' %>
+          </div>
+        </div>
+
+        <h4>Ingredients</h4>
+
+        <%= f.fields_for :ingredients do |i| %>
+          <div class="ingredients-container mb-3">
+            <div class="ingredient-item">
+              <div class="label-input-item">
+                <div class="row no-gutters">
+                  <%= i.text_field :ingredient_name, min: 1, class: 'col-12' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="label-input-item">
+          <div class="row no-gutters">
+            <%= f.label :cooking_instructions, class: 'col-4' %>
+            <%= f.rich_text_area :cooking_instructions, class: 'col-12 app-rich-text-area' %>
+          </div>
+        </div>
+
+        <div class="label-input-item">
+          <div class="row no-gutters">
+            <%= f.label :facebook_url, class: 'col-4' %>
+            <%= f.text_field :facebook_url, class: 'col-8' %>
+          </div>
+        </div>
+
+        <div class="label-input-item">
+          <div class="row no-gutters">
+            <%= f.label :youtube_url, class: 'col-4' %>
+            <%= f.text_field :youtube_url, class: 'col-8' %>
+          </div>
+        </div>
+
+        <div class="label-input-item">
+          <div class="row no-gutters">
+            <%= f.label :instagram_url, class: 'col-4' %>
+            <%= f.text_field :instagram_url, class: 'col-8' %>
+          </div>
+        </div>
+
+        <div class="label-input-item">
+          <div class="row no-gutters">
+            <%= f.label :website_url, class: 'col-4' %>
+            <%= f.text_field :website_url, class: 'col-8' %>
+          </div>
+        </div>
+
+        <div class="label-input-item">
+          <div class="row no-gutters">
+            <%= f.label :recipe_picture, class: 'col-4' %>
+            <%= f.file_field :recipe_picture, direct_upload: true, class: 'col-8' %>
+          </div>
+        </div>
+
+        <%= f.submit "Submit", class: 'form-submit' %>
+      </div>
+    </div>
+  </div>
+<% end %>

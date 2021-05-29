@@ -11,8 +11,11 @@
   </head>
 
   <body>
+    <div class="floating-flash-messages-wrapper js-flash-messages-wrapper">
+      <%= render partial: '/shared/flash_messages' %>
+    </div>
     <%= render partial: '/shared/navbar' %>
-    <div class="container breadcrumbs-container">
+    <div class="breadcrumbs-container">
       <%= breadcrumbs.render(format: :inline, separator: " / ") %>
     </div>
     <%= yield %>

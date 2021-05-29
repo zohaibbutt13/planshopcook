@@ -292,7 +292,7 @@
 
     input, textarea {
       // total height - padding + border - text size defined
-      padding: 7px (3.6rem - 1.4rem + 0.2rem - 1rem);
+      padding: 7px 8px;
       line-height: 20px;
       width: 100%;
       border: 1px solid $grey-color;
@@ -448,9 +448,274 @@
 
 // breadcrumb start
 .breadcrumbs-container {
-  padding: 20px 0;
+  padding: 0 50px;
+
+  .breadcrumb-item{
+    margin: 20px 0;
+    display: inline-block;
+  }
 }
 // breadcrumb end
+
+// select2 start
+.select2-selection {
+  height: 36px !important;
+
+  .select2-selection__rendered {
+    line-height: 36px !important;
+  }
+
+  .select2-selection__arrow {
+    height: 34px !important;
+  }
+}
+// select2 end
+
+// flash messages start
+.floating-flash-messages-wrapper {
+  position: fixed;
+  top: -400px;
+  width: 60%;
+  margin: 0 auto;
+  left: 20%;
+  z-index: 1031;
+  background-color: transparent;
+  transition: all 0.5s;
+}
+
+.flash-messages-wrapper {
+  width: 100%;
+
+  .flash-type {
+    margin-bottom: 20px;
+    padding: 0;
+    background-color: $secondary-color;
+    border-top-right-radius: $primary-radius;
+    border-bottom-right-radius: $primary-radius;
+    border-top-left-radius: $primary-radius;
+    border-bottom-left-radius: $primary-radius;
+
+    ul {
+      padding: 0 20px 12px 20px;
+      margin: 0;
+
+      li {
+        font-size: 1rem;
+        color: $body-text-color;
+      }
+    }
+
+    .flash-icon {
+      height: 26px;
+      width: 26px;
+      display: block;
+      text-align: center;
+      position: absolute;
+      margin-top: -13px;
+      margin-left: 25px;
+      border-radius: 50%;
+      color: $secondary-color;
+      border: 1px solid $body-text-color;
+      
+      i {
+        font-size: 1rem;
+        line-height: 24px;
+      }
+    }
+
+    .verticle-seperator {
+      width: 5px;
+      border-top-left-radius: $primary-radius;
+      border-bottom-left-radius: $primary-radius;
+    }
+  }
+
+  .flash-notice {
+    border: 1px solid $notice-border-color;
+    .notice-icon {
+      border: 1px solid $notice-border-color;
+      background-color: $notice-background-color;
+    }
+    .notice-seperator {
+      background-color: $notice-border-color;
+    }
+  }
+
+  .flash-alert {
+    border: 1px solid $alert-border-color;
+    .alert-icon {
+      border: 1px solid $alert-border-color;
+      background-color: $alert-background-color;
+    }
+    .alert-seperator {
+      background-color: $alert-border-color;
+    }
+  }
+
+  .flash-error {
+    border: 1px solid $error-border-color;
+    .error-icon {
+      border: 1px solid $error-border-color;
+      background-color: $error-background-color;
+    }
+    .error-seperator {
+      background-color: $error-border-color;
+    }
+  }
+
+  .flash-notify {
+    border: 1px solid $notify-border-color;
+    .notify-icon {
+      border: 1px solid $notify-border-color;
+      background-color: $notify-background-color;
+    }
+    .notify-seperator {
+      background-color: $notify-border-color;
+    }
+  }
+}
+
+.flash-messages-dialog-wrapper {
+  .dialog-alert-container {
+    margin: 10px 0;
+  }
+
+  .dialog-alert-container:first_child {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .dialog-alert-container:last_child {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
+
+.dialog-alert-container {
+  width: 100%;
+  border-radius: $primary-radius;
+
+  .icon-box {
+    height: 100%;
+    border-top-left-radius: $primary-radius;
+    border-bottom-left-radius: $primary-radius;
+
+    i {
+      font-size: 1rem;
+    }
+  }
+
+  .detail-body {
+    padding: 10px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+
+      li, li * {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.dialog-notice-flash-container {
+  border: 1px solid $notice-background-color;
+  
+  .icon-box {
+    background-color: $notice-background-color;
+
+    i {
+      color: $secondary-color;
+    }
+  }
+
+  .detail-body {
+    ul {
+      li, li * {
+        color: $notice-border-color;
+      }
+
+      li > a {
+        color: $link-color;
+      }
+    }
+  }
+}
+
+.dialog-alert-flash-container {
+  border: 1px solid $alert-background-color;
+
+  .icon-box {
+    background-color: $alert-background-color;
+
+    i {
+      color: $secondary-color;
+    }
+  }
+
+  .detail-body {
+    ul {
+      li, li * {
+        color: $alert-border-color;
+      }
+
+      li > a {
+        color: $link-color;
+      }
+    }
+  }
+}
+
+.dialog-error-flash-container {
+  border: 1px solid $error-background-color;
+
+  .icon-box {
+    background-color: $error-background-color;
+
+    i {
+      color: $secondary-color;
+    }
+  }
+
+  .detail-body {
+    ul {
+      li, li * {
+        color: $error-border-color;
+      }
+
+      li > a {
+        color: $link-color;
+      }
+    }
+  }
+}
+
+.dialog-notify-flash-container {
+  border: 1px solid $notify-background-color;
+
+  .icon-box {
+    background-color: $notify-background-color;
+
+    i {
+      color: $secondary-color;
+    }
+  }
+
+  .detail-body {
+    ul {
+      li, li * {
+        color: $notify-border-color;
+      }
+
+      li > a {
+        color: $link-color;
+      }
+    }
+  }
+}
+// end flash messages
 
 // custom classes start
 .border-none {
@@ -461,3 +726,121 @@
   list-style-type: none !important;
 }
 // custom classes end
+
+.app-rich-text-area {
+  height: 15rem;
+}
+
+.meal-item-box-container {
+  border: 1px solid $primary-border-color;
+  position: relative;
+  margin-bottom: 10px;
+
+  &:hover, &:focus {
+    .meal-item-box-item {
+      .meal-item-img-container {
+        .meal-item-img {
+          cursor: pointer;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+
+    .bottom-actions-container {
+      display: block;
+    }
+  }
+}
+
+.meal-item-box-item {
+  .meal-item-img-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+
+    .meal-item-img {
+      transition: all .3s ease;
+      max-width: 90%;
+      max-height: 90%;
+    }
+  }
+
+  .indicator {
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: 2px 10px;
+  }
+
+  .indicator-md {
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: 2px 10px;
+  }
+
+  .top-left-corner-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .top-right-corner-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .bottom-left-corner-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .bottom-right-corner-indicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .item-details {
+    .user-name-container, .item-name-container {
+      margin-bottom: 1rem;
+    }
+
+    .item-type {
+      color: $primary-color;
+      font-weight: 400;
+    }
+  }
+}
+
+.bottom-actions-container {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  padding: 0 15px;
+  background-color: $secondary-color;
+  display: none;
+
+  .icon-container {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    padding: 0;
+    text-align: center;
+    line-height: 40px;
+
+    .bars-icon {
+      font-size: 16px;
+      line-height: 40px;
+    }
+
+    .heart-icon {
+      font-size: 20px;
+      line-height: 40px;
+    }
+  }
+}
+

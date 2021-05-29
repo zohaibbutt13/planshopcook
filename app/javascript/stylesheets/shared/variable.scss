@@ -1,3 +1,7 @@
+$white-color: #FFFFFF;
+$black-color: #000000;
+$grey-color: grey;
+
 $primary-color: #D63230;
 $primary-hover-color: #D63230;
 $secondary-color: #FFFFFF;
@@ -6,6 +10,7 @@ $secondary-border-color:            #CCCCCC;
 $primary-background-disabled-color: #F7F7F7;
 $primary-border-disabled-color:     #F7F7F7;
 $secondary-border-disabled-color:   #DDDDDD;
+$body-text-color: $black-color;
 
 $link-color: #006FC8;
 $link-hover-color: #00559A;
@@ -13,9 +18,16 @@ $link-hover-color: #00559A;
 $primary-text-color: #000000;
 $secondary-text-color: #FFFFFF;
 
-$white-color: #FFFFFF;
-$black-color: #000000;
-$grey-color: grey;
+// flash colors start
+$notice-background-color: #5EC263;
+$alert-background-color:  #F8B438;
+$error-background-color:  #F05555;
+$notify-background-color: #38B8F8;
+$notice-border-color:     #39853D;
+$alert-border-color:      #D19422;
+$error-border-color:      #AB1515;
+$notify-border-color:     #3A87AD;
+// flash colors end
 
 // item colors
 $item1: #E4B2D6;
