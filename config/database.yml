@@ -15,6 +15,6 @@ production:
   <<: *default
   database: planshopcook
   username: postgres
-  password: dave@planshopcook
+  password: If54EdSwMFd1reORA8of
   host: planshopcook.cudmaju8glih.us-east-2.rds.amazonaws.com
   port: 5432
