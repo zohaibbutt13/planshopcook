@@ -13,4 +13,8 @@ test:
 
 production:
   <<: *default
-  database: planshopcook_production
+  database: planshopcook
+  username: postgres
+  password: dave@planshopcook
+  host: planshopcook.cudmaju8glih.us-east-2.rds.amazonaws.com
+  port: 5432
