@@ -6,12 +6,15 @@ Rails.application.routes.draw do
   }
   root 'home#index'
 
-  resources :home, only: [:index] do
-    collection do
-      get :recipies
-    end
-  end
+  resources :home, only: [:index]
 
   resources :meal_plans, only: [:new, :create]
-  resources :recipes, only: [:new, :create]
+  resources :recipes, only: [:new, :create, :index] do
+    member do
+      get :add_to_favorite
+    end
+    collection do
+      get :favorite_recipes
+    end
+  end
 end

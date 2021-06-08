@@ -1,12 +1,13 @@
+<% recipe_type = local_assigns[:recipe_type] || 'recipe' %>
 <div class="meal-item-box-container">
   <div class="meal-item-box-item">
     <%= render partial: '/shared/meal_item_image', locals: { meal_item_image_url: meal_item_image_url } %>
     <div class="item-details">
       <div class="user-name-container text-center">
-        <%= link_to 'abc', '#_', class: 'app-secondary-link' %>
+        <%= link_to recipe.recipe_full_name, '#_', class: 'app-secondary-link' %>
       </div>
       <div class="item-name-container text-center">
-        <%= link_to 'xyz', '#_', class: 'app-secondary-link' %>
+        <%= link_to recipe.recipe_created_by, '#_', class: 'app-secondary-link' %>
       </div>
       <p class="item-type text-center">Vegan</p>
     </div>
@@ -16,8 +17,10 @@
       <%= link_to '#_', class: 'primary-btn icon-container' do %>
         <i class="fas fa-bars bars-icon"></i>
       <% end %>
-      <%= link_to '#_', class: 'primary-btn icon-container ml-5' do %>
-        <i class="fas fa-heart heart-icon"></i>
+      <% if recipe_type != 'favorite_recipe' %>
+        <%= link_to '#_', class: 'primary-btn icon-container ml-5 js-add-to-favorite-recipes-element', data: { recipe_id: recipe.id } do %>
+          <i class="fas fa-heart heart-icon"></i>
+        <% end %>
       <% end %>
     </div>
   </div>

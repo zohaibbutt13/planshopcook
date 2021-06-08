@@ -1,7 +1,7 @@
 class MealPlansController < ApplicationController
 
   def new
-    add_breadcrumbs "Recipies", recipies_home_index_path
+    add_breadcrumbs "Recipies", recipes_path
 
     respond_to do |format|
       format.html

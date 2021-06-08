@@ -15,7 +15,7 @@ class Ability
 
     if user.is_admin?
     else
-      can [:new, :create], Recipe
+      can [:new, :create, :index, :favorite_recipes, :add_to_favorite], Recipe
     end
   end
 end

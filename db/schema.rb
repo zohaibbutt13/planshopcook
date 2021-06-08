@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_29_134107) do
+ActiveRecord::Schema.define(version: 2021_06_06_090422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 2021_05_29_134107) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "favorite_recipes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "recipe_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_id"], name: "index_favorite_recipes_on_recipe_id"
+    t.index ["user_id"], name: "index_favorite_recipes_on_user_id"
+  end
+
   create_table "ingredients", force: :cascade do |t|
     t.string "ingredient_name"
     t.bigint "recipe_id"
@@ -69,9 +78,9 @@ ActiveRecord::Schema.define(version: 2021_05_29_134107) do
     t.string "website_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
+    t.bigint "created_by_id"
     t.string "status", default: "pending"
-    t.index ["user_id"], name: "index_recipes_on_user_id"
+    t.index ["created_by_id"], name: "index_recipes_on_created_by_id"
   end
 
   create_table "users", force: :cascade do |t|

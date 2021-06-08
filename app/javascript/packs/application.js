@@ -13,6 +13,9 @@ import "select2";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "../stylesheets/application";
 
+import $ from 'jquery';
+global.$ = jQuery;
+
 $(document).on("turbolinks:load", function(){
   $("[data-toggle='tooltip']").tooltip();
   $("[data-toggle='popover']").popover();

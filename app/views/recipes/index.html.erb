@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="d-flex justify-content-center py-3">
+    <div class="dropdown primary-dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="generate_meal_plan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Generate Meal Plan
+      </button>
+      <div class="dropdown-menu" aria-labelledby="generate_meal_plan">
+        <%= link_to 'Generate 1 week Meal Plan', new_meal_plan_path, class: 'dropdown-item' %>
+        <a class="dropdown-item" href="#">Generate 2 Week Meal Plan</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% recipe_category  = params[:recipe_category] %>
+<% recipe_meal_type = params[:recipe_meal_type] %>
+
+<div class="filters-container py-3">
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <ul class="inline-primary-list">
+        <li><%= link_to 'All', '#_', class: "#{'selected' if recipe_category.blank?} js-category-option", data: { category_type: '' } %></li>
+        <li><%= link_to 'Vegetarian', '#_', class: "#{'selected' if recipe_category == 'vegetarian'} js-category-option", data: { category_type: 'vegetarian' } %></li>
+        <li><%= link_to 'Vegan', '#_', class: "#{'selected' if recipe_category == 'vegan'} js-category-option", data: { category_type: 'vegan' } %></li>
+        <li><%= link_to 'Pescatarian', '#_', class: "#{'selected' if recipe_category == 'pescatarian'} js-category-option", data: { category_type: 'pescatarian' } %></li>
+        <li><%= link_to 'Keto', '#_', class: "#{'selected' if recipe_category == 'keto'} js-category-option", data: { category_type: 'keto' } %></li>
+        <li><%= link_to 'Mediterranean', '#_', class: "#{'selected' if recipe_category == 'mediterranean'} js-category-option", data: { category_type: 'mediterranean' } %></li>
+        <li><%= link_to 'Kids', '#_', class: "#{'selected' if recipe_category == 'kids'} js-category-option", data: { category_type: 'kids' } %></li>
+        <li><%= link_to 'Healthy', '#_', class: "#{'selected' if recipe_category == 'healthy'} js-category-option", data: { category_type: 'healthy' } %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="filters-container pb-5">
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <ul class="inline-primary-list">
+        <li><%= link_to 'All', '#_', class: "#{'selected' if recipe_meal_type.blank?} js-meal-type-option", data: { meal_type: '' } %></li>
+        <li><%= link_to 'Breakfast', '#_', class: "#{'selected' if recipe_meal_type == 'breakfast'} js-meal-type-option", data: { meal_type: 'breakfast' } %></li>
+        <li><%= link_to 'Lunch', '#_', class: "#{'selected' if recipe_meal_type == 'lunch'} js-meal-type-option", data: { meal_type: 'lunch' } %></li>
+        <li><%= link_to 'Dinner', '#_', class: "#{'selected' if recipe_meal_type == 'dinner'} js-meal-type-option", data: { meal_type: 'dinner' } %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<%= form_tag recipes_path, method: :get, id: 'recipes_home_form' do %>
+  <%= hidden_field_tag :recipe_category, params[:recipe_category], id: 'recipe_category' %>
+  <%= hidden_field_tag :recipe_meal_type, params[:recipe_meal_type], id: 'recipe_meal_type' %>
+<% end %>
+
+<div class="new-this-week-container">
+  <div class="container">
+    <div class="row">
+      <% @recipes.each do |recipe| %>
+        <div class="col-lg-3">
+          <%= render partial: '/shared/meal_item', locals: { recipe: recipe, meal_item_image_url: url_for(recipe.recipe_picture), top_left_corner_text: 'Lunch', floating_size: 'md' } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

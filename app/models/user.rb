@@ -8,7 +8,8 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :full_name, presence: true
 
-  has_many :recipes
+  has_many :recipes, foreign_key: :created_by_id
+  has_many :favorite_recipes
 
   # attribute methods start
   def user_full_name

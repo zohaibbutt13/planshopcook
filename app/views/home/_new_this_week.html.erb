@@ -5,9 +5,9 @@
   </div>
   <div class="container">
     <div class="row">
-      <% 10.times do %>
+      <% @recipes.each do |recipe| %>
         <div class="col-lg-3">
-          <%= render partial: '/shared/meal_item', locals: { meal_item_image_url: image_url('home/healthy.jpg'), top_left_corner_text: 'Lunch', floating_size: 'md' } %>
+          <%= render partial: '/shared/meal_item', locals: { recipe: recipe, meal_item_image_url: url_for(recipe.recipe_picture), top_left_corner_text: 'Lunch', floating_size: 'md' } %>
         </div>
       <% end %>
     </div>
