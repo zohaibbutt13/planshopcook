@@ -10,7 +10,21 @@
 // page specific
 @import "home";
 @import "meal_plans";
+@import "recipe";
 
 h1, h2, h3, h4, h5, h6, p, a, button, span {
   font-family: $primary-font-family;
+}
+
+.primary-color {
+  color: $primary-color !important;
+}
+
+.social-link {
+  color: grey;
+  font-size: 36px;
+
+  &:hover {
+    color: black;
+  }
 }

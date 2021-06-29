@@ -13,9 +13,13 @@ class Ability
 
     user ||= User.new
 
-    if user.is_admin?
-    else
-      can [:new, :create, :index, :favorite_recipes, :add_to_favorite], Recipe
+    if user.present?
+      if user.is_admin?
+      else
+        can [:new, :create, :index, :show, :favorite_recipes, :add_to_favorite, :remove_from_favorite], Recipe
+        can [:new], Ingredient
+        can [:new, :create], MealPlan
+      end
     end
   end
 end

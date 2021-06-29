@@ -1,0 +1,6 @@
+<div class="label-input-item ingredient-item" id="ingredient_<%= i %>">
+  <div class="row no-gutters">
+    <input class="col-12" type="text" name="recipe[ingredients_attributes][<%= i %>][ingredient_name]" id="recipe_ingredients_attributes_<%= i %>_ingredient_name">
+    <input class="col-12" type="hidden" name="recipe[ingredients_attributes][<%= i %>][user_id]" id="recipe_ingredients_attributes_<%= i %>_user_id" value="<%= current_user.id %>">
+  </div>
+</div>

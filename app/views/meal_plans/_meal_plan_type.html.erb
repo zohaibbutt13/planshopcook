@@ -1,0 +1,4 @@
+<div class="meal-item-box-item">
+  <%= render partial: '/shared/meal_item_image', locals: { meal: meal, floating_text: { top_right_corner_text: "<span class='js-edit-meal-item edit-meal-item' data-meal-position='#{index}' data-meal-type='#{meal_type}' data-meal-week='#{week}'>Edit</span> ", bottom_left_corner_text: '30 min', floating_size: 'md' } } %>
+</div>
+<%#= render partial: '/meal_plans/empty_meal_plan_item', locals: { meal_type: meal_type, index: index } %>

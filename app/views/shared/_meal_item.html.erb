@@ -1,7 +1,7 @@
 <% recipe_type = local_assigns[:recipe_type] || 'recipe' %>
-<div class="meal-item-box-container">
+<div class="meal-item-box-container h-100">
   <div class="meal-item-box-item">
-    <%= render partial: '/shared/meal_item_image', locals: { meal_item_image_url: meal_item_image_url } %>
+    <%= render partial: '/shared/meal_item_image', locals: { meal: recipe, floating_text: local_assigns[:floating_text] } %>
     <div class="item-details">
       <div class="user-name-container text-center">
         <%= link_to recipe.recipe_full_name, '#_', class: 'app-secondary-link' %>
@@ -13,15 +13,18 @@
     </div>
   </div>
   <div class="bottom-actions-container">
-    <div class="d-flex justify-content-center">
-      <%= link_to '#_', class: 'primary-btn icon-container' do %>
+    <div class="d-flex justify-content-center" id="meal_item_menu_<%= recipe.id %>">
+      <%= link_to recipe_path(recipe), class: 'primary-btn icon-container' do %>
         <i class="fas fa-bars bars-icon"></i>
       <% end %>
-      <% if recipe_type != 'favorite_recipe' %>
-        <%= link_to '#_', class: 'primary-btn icon-container ml-5 js-add-to-favorite-recipes-element', data: { recipe_id: recipe.id } do %>
-          <i class="fas fa-heart heart-icon"></i>
+      <%# if recipe_type != 'favorite_recipe' %>
+        <%= link_to '#_', class: "primary-btn icon-container unselected-icon-container ml-5 js-add-to-favorite-recipes-element #{ 'collapse' if favorite_recipe_ids.include?(recipe.id) }", data: { recipe_id: recipe.id } do %>
+          <i class="fas fa-heart heart-icon js-favorite-recipe-icon"></i>
         <% end %>
-      <% end %>
+        <%= link_to '#_', class: "primary-btn icon-container selected-icon-container ml-5 js-remove-from-favorite-recipes-element #{ 'collapse' unless favorite_recipe_ids.include?(recipe.id) }", data: { recipe_id: recipe.id } do %>
+          <i class="fas fa-heart heart-icon js-selected-favorite-recipe-icon"></i>
+        <% end %>
+      <%# end %>
     </div>
   </div>
 </div>

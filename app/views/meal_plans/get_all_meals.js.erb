@@ -1,0 +1,2 @@
+$('#all_meals_dialog').html("<%= escape_javascript(render partial: '/meal_plans/all_meals_dialog', locals: { meals: @meals, meal_options: @meal_options }) %>");
+$('#all_meals_dialog').modal({ backdrop: 'static' });

@@ -1,0 +1,25 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Available Meals</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row no-gutters meals">
+        <% meals.each.with_index(1) do |meal, index| %>
+          <div class="meal-item js-select-meal-item" data-meal-type="<%= meal_options[:meal_type] %>" data-meal-position="<%= meal_options[:meal_position] %>" data-meal-id="<%= meal.id %>" data-meal-week="<%= meal_options[:meal_week] %>">
+            <div class="meal-item-box-item">
+              <%= render partial: '/shared/meal_item_image', locals: { meal: meal, floating_text: { bottom_left_corner_text: '30 min', floating_size: 'md' }, discard_link: true } %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <!-- <button type="button" class="btn btn-primary">Save</button> -->
+      <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+    </div>
+  </div>
+</div>

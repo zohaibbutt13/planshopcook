@@ -1,0 +1,9 @@
+<div class="<%= meal_type %>-meals meals">
+  <div class="row no-gutters">
+    <% meals.each.with_index(1) do |meal, index| %>
+      <div class="meal-item" id="week_<%= week %>_<%= meal_type %>_meal_<%= index %>">
+        <%= render partial: '/meal_plans/meal_plan_type', locals: { week: week, meal: meal, meal_type: meal_type, index: index } %>
+      </div>
+    <% end %>
+  </div>
+</div>

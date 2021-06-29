@@ -48,15 +48,11 @@
         <h4>Ingredients</h4>
 
         <%= f.fields_for :ingredients do |i| %>
-          <div class="ingredients-container mb-3">
-            <div class="ingredient-item">
-              <div class="label-input-item">
-                <div class="row no-gutters">
-                  <%= i.text_field :ingredient_name, min: 1, class: 'col-12' %>
-                </div>
-              </div>
-            </div>
+          <div class="ingredients-container mb-3" id="ingredients_container">
+            <%= render partial: '/recipes/ingredient', locals: { i: 0 } %>
           </div>
+          <%= link_to 'Add New Ingredient', '#_', class: 'primary-link', id: 'add_new_ingredient' %>
+          <%= hidden_field_tag :ingredient_count, 0, id: 'ingredient_count' %>
         <% end %>
 
         <div class="label-input-item">

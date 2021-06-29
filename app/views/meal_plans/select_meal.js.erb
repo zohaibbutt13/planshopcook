@@ -1,0 +1,2 @@
+$("#week_<%= @meal_options[:meal_week] %>_<%= @meal_options[:meal_type] %>_meal_<%= @meal_options[:meal_position] %>").html("<%= escape_javascript(render partial: '/meal_plans/meal_plan_type', locals: { week: @meal_options[:meal_week], meal: @meal, meal_type: @meal_options[:meal_type], index: @meal_options[:meal_position] }) %>");
+$('#all_meals_dialog').modal('hide');

@@ -1,0 +1,2 @@
+$('#ingredients_container').append("<%= escape_javascript(render partial: '/recipes/ingredient', locals: { i: @ingredient_count }) %>");
+$('#ingredient_count').val("<%= @ingredient_count %>");

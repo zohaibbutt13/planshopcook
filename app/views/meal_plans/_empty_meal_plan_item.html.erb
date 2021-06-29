@@ -1,0 +1,10 @@
+<div class="meal-item-box-item empty-meal-item-box-item js-empty-box-element d-flex justify-content-center align-items-center" id="week_<%= week %>_<%= meal_type %>_meal_<%= index %>" data-meal-position="<%= index %>" data-meal-type="<%= meal_type %>">
+  <i class="far fa-plus-square"></i>
+</div>
+
+<!-- meal plan types code -->
+<% ((meals.size + 1)..7).each do |n| %>
+      <div class="meal-item" id="week_<%= week %>_<%= meal_type %>_meal_<%= n %>" data-meal-position="<%= n %>" data-meal-type="<%= meal_type %>">
+        <%= render partial: '/meal_plans/empty_meal_plan_item', locals: { week: week, meal_type: meal_type, index: n } %>
+      </div>
+    <% end %>

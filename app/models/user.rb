@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   has_many :recipes, foreign_key: :created_by_id
   has_many :favorite_recipes
+  has_many :meal_plans
 
   # attribute methods start
   def user_full_name

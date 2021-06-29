@@ -1,17 +1,23 @@
+<% floating_text = local_assigns[:floating_text] || {} %>
+
 <div class="meal-item-img-container">
-  <div class="w-100 h-100 d-flex justify-content-center align-items-center">
-    <%= image_tag meal_item_image_url, class: 'meal-item-img' %>
-  </div>
-  <% if local_assigns[:top_left_corner_text] %>
-    <span class="top-left-corner-indicator <%= floating_size == 'md' ? 'indicator-md' : 'indicator' %>"><%= top_left_corner_text %></span>
+  <% if local_assigns[:discard_link] %>
+    <%= image_tag url_for(meal.recipe_picture), class: 'meal-item-img' %>
+  <% else %>
+    <%= link_to recipe_path(meal), class: 'w-100 h-100 d-flex justify-content-center align-items-center' do %>
+      <%= image_tag url_for(meal.recipe_picture), class: 'meal-item-img' %>
+    <% end %>
   <% end %>
-  <% if local_assigns[:top_right_corner_text] %>
-    <span class="top-right-corner-indicator <%= floating_size == 'md' ? 'indicator-md' : 'indicator' %>"><%= top_right_corner_text.html_safe %></span>
+  <% if floating_text[:top_left_corner_text] %>
+    <span class="top-left-corner-indicator <%= floating_text[:floating_size] == 'md' ? 'indicator-md' : 'indicator' %>"><%= floating_text[:top_left_corner_text].html_safe %></span>
   <% end %>
-  <% if local_assigns[:bottom_left_corner_text] %>
-    <span class="bottom-left-corner-indicator <%= floating_size == 'md' ? 'indicator-md' : 'indicator' %>"><%= bottom_left_corner_text %></span>
+  <% if floating_text[:top_right_corner_text] %>
+    <span class="top-right-corner-indicator <%= floating_text[:floating_size] == 'md' ? 'indicator-md' : 'indicator' %>"><%= floating_text[:top_right_corner_text].html_safe %></span>
   <% end %>
-  <% if local_assigns[:bottom_right_corner_text] %>
-    <span class="bottom-right-corner-indicator <%= floating_size == 'md' ? 'indicator-md' : 'indicator' %>"><%= bottom_right_corner_text %></span>
+  <% if floating_text[:bottom_left_corner_text] %>
+    <span class="bottom-left-corner-indicator <%= floating_text[:floating_size] == 'md' ? 'indicator-md' : 'indicator' %>"><%= floating_text[:bottom_left_corner_text].html_safe %></span>
+  <% end %>
+  <% if floating_text[:bottom_right_corner_text] %>
+    <span class="bottom-right-corner-indicator <%= floating_text[:floating_size] == 'md' ? 'indicator-md' : 'indicator' %>"><%= floating_text[:bottom_right_corner_text].html_safe %></span>
   <% end %>
 </div>

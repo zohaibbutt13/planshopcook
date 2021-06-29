@@ -7,7 +7,7 @@
     <div class="row">
       <% @recipes.each do |recipe| %>
         <div class="col-lg-3">
-          <%= render partial: '/shared/meal_item', locals: { recipe: recipe, meal_item_image_url: url_for(recipe.recipe_picture), top_left_corner_text: 'Lunch', floating_size: 'md' } %>
+          <%= render partial: '/shared/meal_item', locals: { favorite_recipe_ids: @favorite_recipe_ids, recipe: recipe, meal_item_image_url: url_for(recipe.recipe_picture), floating_text: { top_left_corner_text: 'Lunch', floating_size: 'md' } } %>
         </div>
       <% end %>
     </div>

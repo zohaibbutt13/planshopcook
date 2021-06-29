@@ -1,0 +1,73 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6">
+      <%= image_tag url_for(@recipe.recipe_picture), class: 'w-100 d-block' %>
+    </div>
+    <div class="col-6">
+      <div class="recipe-details-container">
+        <div class="row no-gutters">
+          <div class="col-11">
+            <h2 class="recipe-name"><b><%= @recipe.recipe_full_name %></b></h2>
+          </div>
+          <div class="col-1">
+            <%= link_to '#_', class: "actions-link icon-container unselected-icon-container ml-5 js-add-to-favorite-recipes-element #{ 'collapse' if @favorite_recipe_ids.include?(@recipe.id) }", data: { recipe_id: @recipe.id } do %>
+              <i class="fas fa-heart heart-icon js-favorite-recipe-icon"></i>
+            <% end %>
+            <%= link_to '#_', class: "actions-link icon-container selected-icon-container ml-5 js-remove-from-favorite-recipes-element #{ 'collapse' unless @favorite_recipe_ids.include?(@recipe.id) }", data: { recipe_id: @recipe.id } do %>
+              <i class="fas fa-heart heart-icon js-selected-favorite-recipe-icon"></i>
+            <% end %>
+
+            
+          </div>
+        </div>
+        <div class="d-flex justify-content-start submitted-by pt-2">
+          <p>Submitted By: <span class="primary-color"><%= @recipe.recipe_created_by %></span></p>
+        </div>
+
+        <div class="d-flex justify-content-start raw-info">
+          <p>Cook Time: <span class="primary-color"><%= @recipe.recipe_cook_time.strftime("%k:%M") %></span></p>
+          <p class="pl-4"><span class="primary-color"><%= @recipe.recipe_category %></span></p>
+          <p class="pl-4">For: <span class="primary-color"><%= @recipe.recipe_meal_type %></span></p>
+        </div>
+
+        <div class="ingredients-container pt-2">
+          <h3><b><%= @recipe.number_of_ingredients %> Ingredients</b></h3>
+          <ul>
+            <% @recipe.ingredients.each do |ingredient| %>
+              <li><%= ingredient.ingredient_name %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="pt-3 d-flex justify-content-start">
+          <% if @recipe.recipe_facebook_url.present? %>
+            <%= link_to @recipe.recipe_facebook_url, class: 'social-link' do %>
+              <i class="fab fa-facebook-square"></i>
+            <% end %>
+          <% end %>
+
+          <% if @recipe.recipe_youtube_url.present? %>
+            <%= link_to @recipe.recipe_youtube_url, target: '_blank', class: 'social-link ml-5' do %>
+              <i class="fab fa-youtube"></i>
+            <% end %>
+          <% end %>
+
+          <% if @recipe.recipe_instagram_url.present? %>
+            <%= link_to @recipe.recipe_instagram_url, class: 'social-link ml-5' do %>
+              <i class="fab fa-instagram"></i>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="pt-5">
+          <%= link_to 'Shop Ingredients', '#_', class: 'primary-btn' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h3 class="mb-3">Cooking Instructions</h3>
+    <%= @recipe.cooking_instructions %>
+  </div>
+</div>

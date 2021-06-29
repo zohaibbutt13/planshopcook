@@ -1,0 +1,30 @@
+<div class="meal-plans-container mb-5">
+  <div class="meal-plans-box">
+    <div class="row no-gutters">
+      <div class="meal-type-container">
+        <p class="meal-type-item text-center mx-auto">BreakFast</p>
+        <p class="meal-type-item text-center mx-auto">Lunch</p>
+        <p class="meal-type-item text-center mx-auto">Dinner</p>
+      </div>
+      <div class="col-11 mx-3">
+        <div class="generated-meals-container">
+          <div class="generated-meals-box">
+            <div class="meal-days row no-gutters">
+              <p class="meal-day col">Sunday</p>
+              <p class="meal-day col">Monday</p>
+              <p class="meal-day col">Tuesday</p>
+              <p class="meal-day col">Wednesday</p>
+              <p class="meal-day col">Thursday</p>
+              <p class="meal-day col">Friday</p>
+              <p class="meal-day col">Saturday</p>
+            </div>
+
+            <%= render partial: '/meal_plans/meal_plan_types', locals: { week: week, meal_type: 'breakfast', meals: breakfast_meals } %>
+            <%= render partial: '/meal_plans/meal_plan_types', locals: { week: week, meal_type: 'lunch', meals: lunch_meals } %>
+            <%= render partial: '/meal_plans/meal_plan_types', locals: { week: week, meal_type: 'dinner', meals: dinner_meals } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

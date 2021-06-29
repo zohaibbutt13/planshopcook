@@ -3,7 +3,7 @@
     <div class="row">
       <% @favorite_recipes.each do |favorite_recipe| %>
         <div class="col-lg-3">
-          <%= render partial: '/shared/meal_item', locals: { recipe: favorite_recipe.recipe, meal_item_image_url: url_for(favorite_recipe.recipe.recipe_picture), top_left_corner_text: 'Lunch', floating_size: 'md', recipe_type: 'favorite_recipe' } %>
+          <%= render partial: '/shared/meal_item', locals: { favorite_recipe_ids: @favorite_recipes.collect(&:recipe_id), recipe: favorite_recipe.recipe, meal_item_image_url: url_for(favorite_recipe.recipe.recipe_picture), floating_text: { top_left_corner_text: 'Lunch', floating_size: 'md' }, recipe_type: 'favorite_recipe' } %>
         </div>
       <% end %>
     </div>

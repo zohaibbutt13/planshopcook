@@ -1,0 +1,22 @@
+@import "shared/variable";
+
+.actions-link {
+  display: block;
+  
+  i {
+    color: $primary-color;
+  }
+}
+
+.actions-link.active {
+  i {
+    color: $primary-color;
+    background-color: $primary-color;
+  }
+}
+
+.recipe-details-container {
+  .recipe-name {
+    color: $primary-color;
+  }
+}
