@@ -6,6 +6,7 @@ class Recipe < ApplicationRecord
   validates :recipe_name, :username, :cook_time, :number_of_ingredients, presence: true
   validates :category, inclusion: { in: ['vegetarian', 'vegan', 'keto', 'pescatarian', 'mediterranean', 'kids', 'healthy'] }
   validates :meal_type, inclusion: { in: ['breakfast', 'lunch', 'dinner'] }
+  validates :status, inclusion: { in: ['pending', 'approved', 'rejected'] }
 
   belongs_to :created_by, class_name: 'User'
 

@@ -1,0 +1,28 @@
+<div class="recipe" id="recipe_<%= recipe.id %>">
+  <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-start">
+      <%= image_tag url_for(recipe.recipe_picture), class: 'recipe-icon' %>
+      <p class="recipe-name"><%= recipe.recipe_full_name %></p>
+    </div>
+    <div class="d-flex justify-content-end my-auto">
+      <div class="d-flex justify-content-start">
+        <label class="switch d-flex justify-content-start my-auto">
+          <%= check_box_tag :recommended, true, false, id: "recipe_#{recipe.id}_recommend", class: 'js-recipe-recommendation-btn' %>
+          <span class="slider round"></span>
+          <label for="recipe_<%= recipe.id %>_recommend">Recommended</label>
+        </label>
+      </div>
+      <% if recipe_status != 'approved' %>
+        <%= link_to approve_recipe_path(recipe.id), remote: true, method: :post, class: 'recipe-action-item check-icon ml-5' do %>
+          <i class="fas fa-check"></i>
+        <% end %>
+      <% end %>
+
+      <% if recipe_status != 'rejected' %>
+        <%= link_to reject_recipe_path(recipe.id), remote: true, method: :post, class: 'recipe-action-item times-icon ml-3' do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

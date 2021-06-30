@@ -11,9 +11,14 @@
 @import "home";
 @import "meal_plans";
 @import "recipe";
+@import "admin";
 
 h1, h2, h3, h4, h5, h6, p, a, button, span {
   font-family: $primary-font-family;
+}
+
+html, body {
+  height: 100%;
 }
 
 .primary-color {

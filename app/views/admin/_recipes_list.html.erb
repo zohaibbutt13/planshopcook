@@ -1,0 +1,6 @@
+<div class="recipes-list-container">
+  <h3><%= recipe_status.humanize %> recipes</h3>
+  <div class="recipes-list">
+    <%= render partial: '/admin/recipe_item', locals: { recipe_status: recipe_status }, collection: recipes, as: :recipe %>
+  </div>
+</div>

@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     member do
       post   :add_to_favorite
       delete :remove_from_favorite
+      post   :approve
+      post   :reject
     end
     collection do
       get :favorite_recipes
@@ -29,4 +31,10 @@ Rails.application.routes.draw do
   end
 
   resources :ingredients, only: [:new]
+
+  resources :admin, only: [] do
+    collection do
+      get :home
+    end
+  end
 end

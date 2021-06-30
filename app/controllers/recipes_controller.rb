@@ -81,6 +81,24 @@ class RecipesController < ApplicationController
     end
   end
 
+  def approve
+    @recipe = Recipe.find_by(id: params.permit(:id)[:id])
+    @recipe.update_attributes(status: :approved)
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def reject
+    @recipe = Recipe.find_by(id: params.permit(:id)[:id])
+    @recipe.update_attributes(status: :rejected)
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def recipe_index_params

@@ -1,0 +1,28 @@
+<div class="row no-gutters h-100">
+  <div class="col-2 admin-side-panel">
+    <h2 class="text-center"><b><%= link_to 'DELIGHTYE', root_path, class: 'app-brand-link' %></b></h2>
+    <hr>
+
+    <div class="admin-actions-list">
+      <%= link_to home_admin_index_path(recipe_status: :pending), class: 'd-flex justify-content-start my-3 admin-action-item js-admin-action-item' do %>
+        <i class="fas fa-clock my-auto"></i>
+        <p class="pl-3 m-0">Pending Recipes</p>
+      <% end %>
+
+      <%= link_to home_admin_index_path(recipe_status: :approved), class: 'd-flex justify-content-start my-3 admin-action-item js-admin-action-item' do %>
+        <i class="fas fa-check-circle my-auto"></i>
+        <p class="pl-3 m-0">Approved Recipes</p>
+      <% end %>
+
+      <%= link_to home_admin_index_path(recipe_status: :rejected), class: 'd-flex justify-content-start my-3 admin-action-item js-admin-action-item' do %>
+        <i class="fas fa-trash-alt my-auto"></i>
+        <p class="pl-3 m-0">Rejected Recipes</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-10">
+    <div class="js-recipes-container">
+      <%= render partial: '/admin/recipes_list', locals: { recipes: @recipes, recipe_status: @recipe_status } %>
+    </div>
+  </div>
+</div>
