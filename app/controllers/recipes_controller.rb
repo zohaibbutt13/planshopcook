@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
     where_hash             = {}
     where_hash[:category]  = recipe_index_params[:recipe_category] unless recipe_index_params[:recipe_category].blank?
     where_hash[:meal_type] = recipe_index_params[:recipe_meal_type] unless recipe_index_params[:recipe_meal_type].blank?
-    @recipes               = Recipe.where(where_hash).limit(32).includes(recipe_picture_attachment: :blob)
+    @recipes               = Recipe.approved_recipes.where(where_hash).limit(32).includes(recipe_picture_attachment: :blob)
     @favorite_recipe_ids   = current_user.favorite_recipes.pluck(:recipe_id)
 
     respond_to do |format|
@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe              = Recipe.find_by(id: params.permit(:id)[:id])
+    @recipe              = Recipe.approved_recipes.find_by(id: params.permit(:id)[:id])
     @favorite_recipe_ids = current_user.favorite_recipes.pluck(:recipe_id)
 
     respond_to do |format|

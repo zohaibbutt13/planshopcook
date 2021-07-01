@@ -15,6 +15,8 @@ class Recipe < ApplicationRecord
 
   accepts_nested_attributes_for :ingredients
 
+  scope :approved_recipes, -> { where(status: :approved) }
+
   # attribute methods start
   def recipe_full_name
     recipe_name
