@@ -480,6 +480,19 @@ input:checked + .slider:before {
     }
   }
 }
+
+.tertiary-dropdown {
+  .dropdown-toggle {
+    background-color: $white;
+    color: $primary-color;
+    border: none;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}
 // dropdown end
 
 // list start

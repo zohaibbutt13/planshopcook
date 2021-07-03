@@ -60,9 +60,9 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
-        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/vegetarian.jpg'), category_text: 'Vegiterian' } %>
-        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/pescatarian.jpg'), category_text: 'Pescatarian' } %>
-        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/mediterranean.jpg'), category_text: 'Mediterranean' } %>
+        <%= render partial: '/home/category_item', locals: { link_url: recipes_path(recipe_category: 'vegetarian'), category_url: image_url('home/vegetarian.jpg'), category_text: 'Vegiterian' } %>
+        <%= render partial: '/home/category_item', locals: { link_url: recipes_path(recipe_category: 'pescatarian'), category_url: image_url('home/pescatarian.jpg'), category_text: 'Pescatarian' } %>
+        <%= render partial: '/home/category_item', locals: { link_url: recipes_path(recipe_category: 'mediterranean'), category_url: image_url('home/mediterranean.jpg'), category_text: 'Mediterranean' } %>
       </div>
       <div class="col-lg-4">
         <div class="categories-outer-container">
@@ -70,18 +70,27 @@
             <div class="categories-element text-center">
               <h2>Categories</h2>
               <p>Protect the health of every home</p>
-              <%= link_to 'Recipes', '#_', class: 'secondary-btn' %>
+              <%= link_to 'Recipes', recipes_path, class: 'secondary-btn' %>
               <h5 class="text-center">OR</h5>
-              <%= link_to 'Generate Meal Plan', '#_', class: 'secondary-btn' %>
+              <div class="dropdown tertiary-dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="generate_meal_plan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Generate Meal Plan
+                </button>
+                <div class="dropdown-menu" aria-labelledby="generate_meal_plan">
+                  <%= link_to 'Generate 1 week Meal Plan', new_meal_plan_path({ week: 1 }), class: 'dropdown-item' %>
+                  <%= link_to 'Generate 2 week Meal Plan', new_meal_plan_path({ week: 2 }), class: 'dropdown-item' %>
+                </div>
+              </div>
+              <%#= link_to 'Generate Meal Plan', '#_', class: 'secondary-btn' %>
             </div>
           </div>
         </div>
-        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/kids.jpg'), category_text: 'Kids' } %>
+        <%= render partial: '/home/category_item', locals: { link_url: recipes_path(recipe_category: 'kids'), category_url: image_url('home/kids.jpg'), category_text: 'Kids' } %>
       </div>
       <div class="col-lg-4">
-        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/vegan.jpg'), category_text: 'Vegan' } %>
-        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/keto.jpg'), category_text: 'Keto' } %>
-        <%= render partial: '/home/category_item', locals: { category_url: image_url('home/healthy.jpg'), category_text: 'Healthy' } %>
+        <%= render partial: '/home/category_item', locals: { link_url: recipes_path(recipe_category: 'vegan'), category_url: image_url('home/vegan.jpg'), category_text: 'Vegan' } %>
+        <%= render partial: '/home/category_item', locals: { link_url: recipes_path(recipe_category: 'keto'), category_url: image_url('home/keto.jpg'), category_text: 'Keto' } %>
+        <%= render partial: '/home/category_item', locals: { link_url: recipes_path(recipe_category: 'healthy'), category_url: image_url('home/healthy.jpg'), category_text: 'Healthy' } %>
       </div>
     </div>
   </div>
